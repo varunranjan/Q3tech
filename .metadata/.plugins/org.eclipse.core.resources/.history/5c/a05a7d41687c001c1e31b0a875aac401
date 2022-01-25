@@ -1,0 +1,13 @@
+<html>
+<body>
+<%@page isELIgnored="false"  %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String location = (String)request.getAttribute("location"); %>
+<c:forEach items="${location }" var="l">
+
+<h2> locations are </h2>
+<h1><c:out value="${l}"></c:out></h1>
+</c:forEach>
+
+</body>
+</html>

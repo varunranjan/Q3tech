@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<util:list list-class="java.util.LinkedList" id="phoneList">
+		<value>Nokia</value>
+		<value>MI</value>
+		<value>Real Me</value>
+		<value>Samsung</value>
+	</util:list>
+	<util:set set-class="java.util.TreeSet" id="address">
+		<value>Delhi</value>
+		<value>Delhi</value>
+		<value>Patna</value>
+	</util:set>
+	<util:map map-class="java.util.HashMap" id="course">
+		<entry key="Java" value="1 Year" />
+		<entry key="dot net" value="2 Year" />
+		<entry key="ROR" value="3 Year" />
+	</util:map>
+	<util:properties id="importantkeys">
+		<prop key="userName">vvarunbit@gmail.com</prop>
+		<prop key="password">admin@123</prop>
+	</util:properties>
+
+	<!-- this is our beans -->
+	<!-- <bean class="com.springcore.standalone.collection.Emp" name="employee1"
+		p:name="Shashi" p:phones-ref="phoneList" p:addresses-ref="address"
+		p:courses-ref="course" p:property-ref="importantkeys" /> -->
+		
+		<!-- <bean class="com.springcore.standalone.collection.Emp" name="employee1" p:name="Shashi" >
+		<property name="phones" ref="phoneList"></property>
+		<property name="addresses" ref="address"></property>
+		<property name="courses" ref="course"></property>
+		<property name="properties" ref="importantkeys"></property>
+		</bean> -->
+		
+		<bean class="com.springcore.standalone.collection.Emp" name="employee1"
+		p:name="Shashi" p:phones-ref="phoneList" p:addresses-ref="address"
+		p:courses-ref="course"  p:properties-ref="importantkeys" /> 
+
+
+
+
+</beans>
